@@ -1,0 +1,14 @@
+﻿@model TiendaDeDeportes.Models.ListaProductosViewModel
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+@foreach (var p in Model.Productos)
+{
+    <div>
+        <h3>@p.Nombre</h3>
+        @p.Descripcion
+        <h4>@p.Precio.ToString("c")</h4>
+    </div>
+}
