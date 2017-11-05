@@ -1,0 +1,40 @@
+﻿@model TiendaDeDeportes.Models.CarritoIndexViewModel
+
+@{
+    ViewBag.Title = "Tienda De Deportes: Tu Carrito";
+}
+
+<h2>Tu Carrito</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cantidad</th>
+            <th>Item</th>
+            <th class="text-right">Precio</th>
+            <th class="text-right">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.Carrito.Items)
+        {
+            <tr>
+                <td class="text-center">@item.Cantidad</td>
+                <td class="text-left">@item.Producto.Nombre</td>
+                <td class="text-right">@item.Producto.Precio.ToString("c")</td>
+                <td class="text-right">@((item.Cantidad * item.Producto.Precio).ToString("c"))</td>
+            </tr>         
+
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">@Model.Carrito.CalcularValorTotal().ToString("c")</td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.VolverAUrl">Seguir Comprando</a>
+</div>
+

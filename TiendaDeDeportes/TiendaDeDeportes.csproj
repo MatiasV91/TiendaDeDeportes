@@ -209,11 +209,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Dominio\Abstract\IProductoRepositorio.cs" />
     <Compile Include="Dominio\Concrete\EFProductoRepositorio.cs" />
+    <Compile Include="Dominio\Entities\Carrito.cs" />
     <Compile Include="Dominio\Entities\Producto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,6 +229,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CarritoIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ListaProductosViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -292,10 +296,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Producto\Lista.cshtml" />
     <Content Include="Views\Shared\SumarioProductos.cshtml" />
+    <Content Include="Views\Nav\Menu.cshtml" />
+    <Content Include="Views\Carrito\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Nav\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

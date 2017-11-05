@@ -32,7 +32,9 @@ namespace TiendaDeDePortes.Controllers
                 {
                     PaginaActual = pagina,
                     ItemsPorPagina = NumeroPorPagina,
-                    TotalItems = repositorio.Productos.Count()
+                    TotalItems = categoria == null ?
+                                                repositorio.Productos.Count() :
+                                                repositorio.Productos.Where(e => e.Categoria == categoria).Count()
                 },
 
                 CategoriaActual = categoria
