@@ -13,11 +13,32 @@ namespace TiendaDeDeportes
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Producto", action = "Lista", id = UrlParameter.Optional }
-            );
+            routes.MapRoute(null,
+                "",
+                new
+                {
+                    controller = "Producto", action = "Lista",
+                    categoria = (string)null, pagina = 1
+                });
+
+            routes.MapRoute(null,
+                "Pagina{pagina}",
+                new { controller = "Producto", action = "Lista", categoria = (string)null},
+                new { pagina = @"\d+"}
+                );
+
+            routes.MapRoute(null,
+                "{categoria}",
+                new { controller = "Producto", action = "Lista", pagina = 1 }
+                );
+
+            routes.MapRoute(null,
+                "{categoria}/Pagina{pagina}",
+                new { controller = "Producto", action = "Lista" },
+                new { pagina = @"d+" }
+                );
+
+            routes.MapRoute(null, "{controller}/{action}");
         }
     }
 }

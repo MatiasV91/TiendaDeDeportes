@@ -18,21 +18,24 @@ namespace TiendaDeDePortes.Controllers
             this.repositorio = productoRepositorio;
         }
 
-        public ViewResult Lista(int page = 1)
+        public ViewResult Lista(string categoria,int pagina = 1)
         {
             ListaProductosViewModel vm = new ListaProductosViewModel
             {
                 Productos = repositorio.Productos
+                .Where(p => categoria == null || p.Categoria == categoria)
                                         .OrderBy(p => p.ProductoId)
-                                        .Skip((page - 1) * NumeroPorPagina)
+                                        .Skip((pagina - 1) * NumeroPorPagina)
                                         .Take(NumeroPorPagina),
 
                 PaginacionInfo = new PaginacionInfo
                 {
-                    PaginaActual = page,
+                    PaginaActual = pagina,
                     ItemsPorPagina = NumeroPorPagina,
                     TotalItems = repositorio.Productos.Count()
-                }
+                },
+
+                CategoriaActual = categoria
             };
             return View(vm);
         }

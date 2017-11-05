@@ -10,5 +10,6 @@ namespace TiendaDeDeportes.Models
     {
         public IEnumerable<Producto> Productos { get; set; }
         public PaginacionInfo PaginacionInfo { get; set; }
+        public string CategoriaActual { get; set; }
     }
 }
