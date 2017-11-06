@@ -28,6 +28,11 @@ namespace TiendaDeDeportes.Controllers
             });
         }
 
+        public PartialViewResult Sumario(Carrito carrito)
+        {
+            return PartialView(carrito);
+        }
+
         public RedirectToRouteResult AgregarAlCarrito(Carrito carrito, int productoId, string volverAUrl)
         {
             Producto producto = repositorio.Productos.FirstOrDefault(p => p.ProductoId == productoId);

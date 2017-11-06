@@ -299,6 +299,7 @@
     <Content Include="Views\Shared\SumarioProductos.cshtml" />
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
+    <Content Include="Views\Carrito\Sumario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
