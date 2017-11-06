@@ -214,8 +214,10 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Dominio\Abstract\IProcesarOrden.cs" />
     <Compile Include="Dominio\Abstract\IProductoRepositorio.cs" />
     <Compile Include="Dominio\Concrete\EFProductoRepositorio.cs" />
+    <Compile Include="Dominio\Concrete\ProcesarOrdenEmail.cs" />
     <Compile Include="Dominio\Entities\Carrito.cs" />
     <Compile Include="Dominio\Entities\DetallesEnvio.cs" />
     <Compile Include="Dominio\Entities\Producto.cs" />
@@ -302,9 +304,11 @@
     <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Carrito\Sumario.cshtml" />
     <Content Include="Views\Carrito\Checkout.cshtml" />
+    <Content Include="Views\Carrito\Completado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Email\" />
     <Folder Include="Views\DetallesEnvio\" />
   </ItemGroup>
   <ItemGroup>
