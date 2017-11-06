@@ -222,6 +222,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PaginacionHelpers.cs" />
+    <Compile Include="Infrastructure\Binders\CarritoModelBinder.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Migrations\201711041442034_firstMigration.cs" />
     <Compile Include="Migrations\201711041442034_firstMigration.Designer.cs">

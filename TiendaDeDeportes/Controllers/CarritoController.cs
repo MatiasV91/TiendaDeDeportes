@@ -19,43 +19,32 @@ namespace TiendaDeDeportes.Controllers
             repositorio = repo;
         }
 
-        private Carrito GetCarrito()
-        {
-            Carrito carrito = (Carrito)Session["Carrito"];
-            if (carrito == null)
-            {
-                carrito = new Carrito();
-                Session["Carrito"] = carrito;
-            }
-            return carrito;
-        }
-
-        public ViewResult Index(string volverAUrl)
+        public ViewResult Index(Carrito carrito, string volverAUrl)
         {
             return View(new CarritoIndexViewModel
             {
-                Carrito = GetCarrito(),
+                Carrito = carrito,
                 VolverAUrl = volverAUrl
             });
         }
 
-        public RedirectToRouteResult AgregarAlCarrito(int productoId, string volverAUrl)
+        public RedirectToRouteResult AgregarAlCarrito(Carrito carrito, int productoId, string volverAUrl)
         {
             Producto producto = repositorio.Productos.FirstOrDefault(p => p.ProductoId == productoId);
             if (producto != null)
             {
-                GetCarrito().AgregarItem(producto, 1);
+                carrito.AgregarItem(producto, 1);
             }
             return RedirectToAction("Index", new { volverAUrl });
         }
 
-        public RedirectToRouteResult RemoverDelCarrito(int productoId, string volverAUrl)
+        public RedirectToRouteResult RemoverDelCarrito(Carrito carrito, int productoId, string volverAUrl)
         {
             Producto producto = repositorio.Productos.FirstOrDefault(p => p.ProductoId == productoId);
 
             if(producto != null)
             {
-                GetCarrito().RemoverItem(producto);
+                carrito.RemoverItem(producto);
             }
 
             return RedirectToAction("Index", new { volverAUrl });
