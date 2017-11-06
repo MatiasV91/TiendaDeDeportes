@@ -5,7 +5,7 @@
 }
 
 <h2>Tu Carrito</h2>
-<table class="table">
+<table class="table" id="carritoTable">
     <thead>
         <tr>
             <th>Cantidad</th>
@@ -22,6 +22,14 @@
                 <td class="text-left">@item.Producto.Nombre</td>
                 <td class="text-right">@item.Producto.Precio.ToString("c")</td>
                 <td class="text-right">@((item.Cantidad * item.Producto.Precio).ToString("c"))</td>
+                <td>
+                    @using(Html.BeginForm("RemoverDelCarrito", "Carrito"))
+                    {
+                        @Html.Hidden("ProductoId", item.Producto.ProductoId)
+                        @Html.HiddenFor(x => x.VolverAUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="Remover" />
+                    }
+                </td>
             </tr>         
 
         }
