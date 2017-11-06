@@ -217,6 +217,7 @@
     <Compile Include="Dominio\Abstract\IProductoRepositorio.cs" />
     <Compile Include="Dominio\Concrete\EFProductoRepositorio.cs" />
     <Compile Include="Dominio\Entities\Carrito.cs" />
+    <Compile Include="Dominio\Entities\DetallesEnvio.cs" />
     <Compile Include="Dominio\Entities\Producto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -300,9 +301,11 @@
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Carrito\Sumario.cshtml" />
+    <Content Include="Views\Carrito\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DetallesEnvio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

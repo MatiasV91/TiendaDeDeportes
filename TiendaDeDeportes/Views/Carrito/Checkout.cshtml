@@ -1,0 +1,42 @@
+﻿@model TiendaDeDeportes.Dominio.Entities.DetallesEnvio
+
+@{
+    ViewBag.Title = "Comprar";
+}
+
+<h2>Comprar</h2>
+<p>Esciba sus datos personales para el envio</p>
+
+@using (Html.BeginForm())
+{
+    <h3>Enviar a:</h3>
+    <div class="form-group">
+        <label>Nombre: </label>
+        @Html.TextBoxFor(x => x.Nombre, new { @class= "form-control"})
+    </div>
+
+    <h3>Direccion: </h3>
+    <div class="form-group">
+        <label>Direccion: </label>
+        @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control" })
+        <label>Localidad:</label>
+        @Html.TextBoxFor(x => x.Localidad, new { @class = "form-control" })
+        <label>Provincia:</label>
+        @Html.TextBoxFor(x => x.Provincia, new { @class = "form-control" })
+        <label>Pais:</label>
+        @Html.TextBoxFor(x => x.Pais, new { @class = "form-control" })
+        <label>Codigo Postal:</label>
+        @Html.TextBoxFor(x => x.CodigoPostal, new { @class = "form-control" })
+        <div class="checkbox">
+            <label>
+                @Html.EditorFor(x => x.EnvolverParaRegalo)
+                Envolver Para Regalo
+            </label>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Completar Compra" />
+    </div>
+}
+

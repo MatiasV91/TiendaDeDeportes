@@ -54,5 +54,10 @@ namespace TiendaDeDeportes.Controllers
 
             return RedirectToAction("Index", new { volverAUrl });
         }
+
+        public ViewResult Checkout()
+        {
+            return View(new DetallesEnvio());
+        }
     }
 }
