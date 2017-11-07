@@ -1,5 +1,5 @@
 # TiendaDeDeportes
-Creando una Tienda E-commerce desde 0.
+Creando una Tienda E-commerce desde 0.Segun Libro Pro ASP.NET MVC 5 de Adam Freeman
 
 Productos, Categorias, Carrito, Registro de la Orden
 
