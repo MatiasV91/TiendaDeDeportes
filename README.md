@@ -1,5 +1,6 @@
 # TiendaDeDeportes
-Creando una Tienda E-commerce desde 0
+Creando una Tienda E-commerce desde 0.
+
 Productos, Categorias, Carrito, Registro de la Orden
 
 Imagenes:
