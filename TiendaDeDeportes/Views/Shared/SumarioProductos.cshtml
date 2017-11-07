@@ -1,19 +1,18 @@
 ﻿@model TiendaDeDePortes.Dominio.Entities.Producto
 
-<div class="well">
+<div class="well" id="itemwell">
     <h3>
         <strong>@Model.Nombre</strong>
-        <span class="pull-right label label-primary">@Model.Precio.ToString("c")</span>
+        <span id="ItemBtn" class="pull-right">
+            <span class="label label-primary">@Model.Precio.ToString("c")</span>
+            @using (Html.BeginForm("AgregarAlCarrito", "Carrito"))
+            {
+
+                @Html.HiddenFor(x => x.ProductoId)
+                @Html.Hidden("volverAUrl", Request.Url.PathAndQuery)
+                <input type="submit" class="btn btn-success" value="Agregar al Carrito" />
+            }
+        </span>
     </h3>
-
-    @using(Html.BeginForm("AgregarAlCarrito", "Carrito"))
-    {
-        <div class="pull-right">
-            @Html.HiddenFor(x => x.ProductoId)
-            @Html.Hidden("volverAUrl", Request.Url.PathAndQuery)
-            <input type="submit" class="btn btn-success" value="Agregar al Carrito" />
-        </div>
-    }
-
     <span class="lead">@Model.Descripcion</span>
 </div>

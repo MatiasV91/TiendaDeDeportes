@@ -1,14 +1,21 @@
 ﻿@model TiendaDeDeportes.Dominio.Entities.Carrito
 
-<div class="navbar-right">
+<div class="navbar-right hidden-xs">
     &nbsp;
     @Html.ActionLink("Ir al Carrito", "Index", "Carrito",
     new { volverAUrl = Request.Url.PathAndQuery },
     new { @class = "btn btn-default navbar-btn" })
 </div>
 
+<div class="navbar-right visible-xs">
+    <a href=@Url.Action("Index", "Carrito", new { volverAUrl = Request.Url.PathAndQuery})
+     class="btn btn-default navbar-btn">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+    </a>
+</div>
+
 <div class="navbar-text navbar-right">
-    <b>Tu Carrito:</b>
+    <b class="hidden-xs navbar-left">Tu Carrito:&nbsp;</b>
     @Model.Items.Sum(x => x.Cantidad) Item(s),
     @Model.CalcularValorTotal().ToString("c")
 </div>

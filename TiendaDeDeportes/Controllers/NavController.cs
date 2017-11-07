@@ -15,7 +15,7 @@ namespace TiendaDeDeportes.Controllers
             repositorio = repo;
         }
 
-        public PartialViewResult Menu(string categoria = null)
+        public PartialViewResult Menu(string categoria = null, bool menuMobile = false)
         {
             ViewBag.CategoriaActual = categoria;
             IEnumerable<string> categorias = repositorio.Productos
@@ -23,6 +23,10 @@ namespace TiendaDeDeportes.Controllers
                                                     .Distinct()
                                                     .OrderBy(x => x);
 
+            if (menuMobile)
+            {
+                return PartialView("MenuMobile", categorias);
+            }
             return PartialView(categorias);
         }
     }

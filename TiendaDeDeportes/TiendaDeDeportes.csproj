@@ -305,6 +305,7 @@
     <Content Include="Views\Carrito\Sumario.cshtml" />
     <Content Include="Views\Carrito\Checkout.cshtml" />
     <Content Include="Views\Carrito\Completado.cshtml" />
+    <Content Include="Views\Nav\MenuMobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

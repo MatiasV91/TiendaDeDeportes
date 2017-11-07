@@ -23,6 +23,12 @@ textarea {
     max-width: 280px;
 }
 
+.navbar-right{
+    float:right;
+    margin-right:15px;
+    margin-left:15px;
+}
+
 #carritoTable td {
     vertical-align: middle;
 }
@@ -47,4 +53,15 @@ textarea {
 
 .validation-summary-valid {
     display: none;
+}
+
+#ItemBtn {
+    margin:0;
+    padding: 0;
+    /*vertical-align: middle;*/
+    float: right;
+}
+
+#menuMobile ul {
+    list-style-type: none;
 }
