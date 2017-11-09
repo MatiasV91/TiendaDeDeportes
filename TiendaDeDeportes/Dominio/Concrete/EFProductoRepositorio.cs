@@ -14,5 +14,39 @@ namespace TiendaDeDePortes.Dominio.Concrete
         private ApplicationDbContext _context = new ApplicationDbContext();
 
         public IEnumerable<Producto> Productos { get { return _context.Productos; } }
+
+        public void GuardarProducto(Producto producto)
+        {
+            if(producto.ProductoId == 0)
+            {
+                _context.Productos.Add(producto);
+            }
+            else
+            {
+                Producto dbEntry = _context.Productos.Find(producto.ProductoId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Nombre = producto.Nombre;
+                    dbEntry.Descripcion = producto.Descripcion;
+                    dbEntry.Precio = producto.Precio;
+                    dbEntry.Categoria = producto.Categoria;
+                }
+            }
+            _context.SaveChanges();
+        }
+
+        public Producto EliminarProducto(int productoId)
+        {
+            Producto dbEntry = _context.Productos.Find(productoId);
+
+            if (dbEntry != null)
+            {
+                _context.Productos.Remove(dbEntry);
+                _context.SaveChanges();
+            }
+
+            return dbEntry;
+        }
     }
+
 }

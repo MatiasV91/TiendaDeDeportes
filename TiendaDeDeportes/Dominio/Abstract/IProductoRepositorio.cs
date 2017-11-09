@@ -10,5 +10,7 @@ namespace TiendaDeDePortes.Dominio.Abstract
     public interface IProductoRepositorio
     {
         IEnumerable<Producto> Productos { get; }
+        void GuardarProducto(Producto producto);
+        Producto EliminarProducto(int productoId);
     }
 }

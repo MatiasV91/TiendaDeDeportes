@@ -1,0 +1,38 @@
+﻿@model TiendaDeDePortes.Dominio.Entities.Producto
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Editar @Model.Nombre</h3>
+    </div>
+
+    @using (Html.BeginForm("Edit", "Admin"))
+    {
+        @Html.ValidationSummary()
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.HiddenFor(p => p.ProductoId)
+                <label>Nombre:</label>
+                @Html.TextBoxFor(p => p.Nombre, new { @class = "form-control" })
+                <label>Descripcion:</label>
+                @Html.TextAreaFor(p => p.Descripcion, new { @class = "form-control", rows = 5 })
+                <label>Precio:</label>
+                @Html.TextBoxFor(p => p.Precio, new { @class = "form-control" })
+                <label>Categoria:</label>
+                @Html.TextBoxFor(p => p.Categoria, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" class="btn btn-primary" value="Guardar" />
+            @Html.ActionLink("Cancelar y volver a la Lista", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+
