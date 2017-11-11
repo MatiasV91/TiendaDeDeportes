@@ -34,10 +34,16 @@ namespace TiendaDeDeportes.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Producto producto)
+        public ActionResult Edit(Producto producto, HttpPostedFileBase imagen = null)
         {
             if (ModelState.IsValid)
             {
+                if(imagen != null)
+                {
+                    producto.ImagenMimeType = imagen.ContentType;
+                    producto.ImagenData = new byte[imagen.ContentLength];
+                    imagen.InputStream.Read(producto.ImagenData, 0, imagen.ContentLength);
+                }
                 repositorio.GuardarProducto(producto);
                 TempData["mensaje"] = string.Format("{0} Se guardo Correctamente", producto.Nombre);
                 return RedirectToAction("Index");

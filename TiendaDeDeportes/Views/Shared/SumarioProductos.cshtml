@@ -1,6 +1,13 @@
 ﻿@model TiendaDeDePortes.Dominio.Entities.Producto
 
 <div class="well" id="itemwell">
+    @if(Model.ImagenData != null)
+    {
+        <div class="pull-left" style="margin-right:10px">
+            <img class="img-responsive"
+                 src="@Url.Action("GetImagen", "Producto", new {Model.ProductoId})" />
+        </div>
+    }
     <h3>
         <strong>@Model.Nombre</strong>
         <span id="ItemBtn" class="pull-right">

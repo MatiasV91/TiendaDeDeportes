@@ -23,5 +23,8 @@ namespace TiendaDeDePortes.Dominio.Entities
 
         [Required(ErrorMessage = "Especifique una Categoria")]
         public string Categoria { get; set; }
+
+        public byte[] ImagenData { get; set; }
+        public string ImagenMimeType { get; set; }
     }
 }

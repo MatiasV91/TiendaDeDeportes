@@ -30,6 +30,11 @@ namespace TiendaDeDePortes.Dominio.Concrete
                     dbEntry.Descripcion = producto.Descripcion;
                     dbEntry.Precio = producto.Precio;
                     dbEntry.Categoria = producto.Categoria;
+                    if(producto.ImagenData != null)
+                    {
+                        dbEntry.ImagenData = producto.ImagenData;
+                        dbEntry.ImagenMimeType = producto.ImagenMimeType;
+                    }
                 }
             }
             _context.SaveChanges();

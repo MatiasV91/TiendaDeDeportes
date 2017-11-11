@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TiendaDeDeportes.Models;
 using TiendaDeDePortes.Dominio.Abstract;
+using TiendaDeDePortes.Dominio.Entities;
 
 namespace TiendaDeDePortes.Controllers
 {
@@ -40,6 +41,19 @@ namespace TiendaDeDePortes.Controllers
                 CategoriaActual = categoria
             };
             return View(vm);
+        }
+
+        public FileContentResult GetImagen(int productoId)
+        {
+            Producto producto = repositorio.Productos.FirstOrDefault(p => p.ProductoId == productoId);
+            if (producto != null)
+            {
+                return File(producto.ImagenData, producto.ImagenMimeType);
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }
