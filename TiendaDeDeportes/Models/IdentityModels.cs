@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using TiendaDeDePortes.Dominio.Entities;
+using TiendaDeDeportes.Dominio.Entities;
 
 namespace TiendaDeDeportes.Models
 {
@@ -22,6 +23,8 @@ namespace TiendaDeDeportes.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<DetallesEnvio> DetallesEnvios { get; set; }
+        public DbSet<CompraItem> CompraItems { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -31,5 +34,13 @@ namespace TiendaDeDeportes.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CompraItem>().HasRequired(c => c.DetallesEnvio).WithMany().WillCascadeOnDelete(false);
+            modelBuilder.Entity<CompraItem>().HasRequired(c => c.Producto).WithMany().WillCascadeOnDelete(false);
+            base.OnModelCreating(modelBuilder);
+        }
     }
+
 }

@@ -215,16 +215,23 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Dominio\Abstract\ICompraItemRepositorio.cs" />
+    <Compile Include="Dominio\Abstract\IDetallesEnvioRepositorio.cs" />
     <Compile Include="Dominio\Abstract\IProcesarOrden.cs" />
     <Compile Include="Dominio\Abstract\IProductoRepositorio.cs" />
+    <Compile Include="Dominio\Concrete\EFCompraItemRepositorio.cs" />
+    <Compile Include="Dominio\Concrete\EFDetallesEnvioRepositorio.cs" />
     <Compile Include="Dominio\Concrete\EFProductoRepositorio.cs" />
+    <Compile Include="Dominio\Concrete\ProcesarOrdenDb.cs" />
     <Compile Include="Dominio\Concrete\ProcesarOrdenEmail.cs" />
     <Compile Include="Dominio\Entities\Carrito.cs" />
+    <Compile Include="Dominio\Entities\CompraItem.cs" />
     <Compile Include="Dominio\Entities\DetallesEnvio.cs" />
     <Compile Include="Dominio\Entities\Producto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="HtmlHelpers\PaginacionHelpers.cs" />
     <Compile Include="Infrastructure\Binders\CarritoModelBinder.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
@@ -239,6 +246,10 @@
     <Compile Include="Migrations\201711091851473_DatosAgregadosImagenProductos.cs" />
     <Compile Include="Migrations\201711091851473_DatosAgregadosImagenProductos.Designer.cs">
       <DependentUpon>201711091851473_DatosAgregadosImagenProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711191259129_envio.cs" />
+    <Compile Include="Migrations\201711191259129_envio.Designer.cs">
+      <DependentUpon>201711191259129_envio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -346,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711091851473_DatosAgregadosImagenProductos.resx">
       <DependentUpon>201711091851473_DatosAgregadosImagenProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711191259129_envio.resx">
+      <DependentUpon>201711191259129_envio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

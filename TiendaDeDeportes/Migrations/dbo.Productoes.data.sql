@@ -1,0 +1,10 @@
+SET IDENTITY_INSERT [dbo].[Productoes] ON
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (1, N'Kayak', N'Bote para una Persona.', CAST(2000.02 AS Decimal(18, 2)), N'Deportes De Agua', <Binary Data>, N'image/jpeg')
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (2, N'Chaleco Salvavidas', N'Color Rojo', CAST(910.00 AS Decimal(18, 2)), N'Deportes De Agua', <Binary Data>, N'image/jpeg')
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (3, N'Pelota de Futbol', N'Modelo oficial del Mundial Rusia 2018 ', CAST(1000.00 AS Decimal(18, 2)), N'Futbol', <Binary Data>, N'image/jpeg')
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (4, N'Banderines de Corner', N'x4 Color Rojo', CAST(500.00 AS Decimal(18, 2)), N'Futbol', <Binary Data>, N'image/jpeg')
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (5, N'Estadio', N'Capacidad de 35000 Asientos', CAST(9000000.00 AS Decimal(18, 2)), N'Futbol', <Binary Data>, N'image/jpeg')
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (7, N'Mesa de Ajedrez', N'80x80 cm ', CAST(1200.00 AS Decimal(18, 2)), N'Ajedrez', <SQLVARIANT>, NULL)
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (8, N'Piezas de Ajedrez', N'Hechas de Madera', CAST(500.00 AS Decimal(18, 2)), N'Ajedrez', <SQLVARIANT>, NULL)
+INSERT INTO [dbo].[Productoes] ([ProductoId], [Nombre], [Descripcion], [Precio], [Categoria], [ImagenData], [ImagenMimeType]) VALUES (9, N'Snorkel', N'Respirar bajo el Agua', CAST(160.00 AS Decimal(18, 2)), N'Deportes De Agua', <SQLVARIANT>, NULL)
+SET IDENTITY_INSERT [dbo].[Productoes] OFF

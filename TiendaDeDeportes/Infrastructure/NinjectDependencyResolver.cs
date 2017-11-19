@@ -26,11 +26,15 @@ namespace TiendaDeDeportes.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IProductoRepositorio>().To<EFProductoRepositorio>();
-            EmailConfiguracion emailConfiguracion = new EmailConfiguracion
-            {
-                WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
-            };
-            kernel.Bind<IProcesarOrden>().To<ProcesarOrdenEmail>().WithConstructorArgument("configuracion", emailConfiguracion);
+            //EmailConfiguracion emailConfiguracion = new EmailConfiguracion
+            //{
+            //    WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
+            //};
+            //kernel.Bind<IProcesarOrden>().To<ProcesarOrdenEmail>().WithConstructorArgument("configuracion", emailConfiguracion);
+            kernel.Bind<IProcesarOrden>().To<ProcesarOrdenDb>();
+            kernel.Bind<ICompraItemRepositorio>().To<EFCompraItemRepositorio>();
+            kernel.Bind<IDetallesEnvioRepositorio>().To<EFDetallesEnvioRepositorio>();
+
         }
 
         public object GetService(Type serviceType)

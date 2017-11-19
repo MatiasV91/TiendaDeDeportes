@@ -8,6 +8,8 @@ namespace TiendaDeDeportes.Dominio.Entities
 {
     public class DetallesEnvio
     {
+        public int DetallesEnvioId { get; set; }
+
         [Required(ErrorMessage = "Escriba un Nombre")]
         public string Nombre { get; set; }
 
@@ -26,7 +28,7 @@ namespace TiendaDeDeportes.Dominio.Entities
         [Required(ErrorMessage = "Escriba el Codigo Postal")]
         public string CodigoPostal { get; set; }
 
-
         public bool EnvolverParaRegalo { get; set; }
+
     }
 }

@@ -12,7 +12,7 @@ namespace TiendaDeDePortes.Controllers
     public class ProductoController : Controller
     {
         private IProductoRepositorio repositorio;
-        public int NumeroPorPagina = 4;
+        public int NumeroPorPagina = 5;
 
         public ProductoController(IProductoRepositorio productoRepositorio)
         {
