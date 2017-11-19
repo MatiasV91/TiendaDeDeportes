@@ -3,8 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using TiendaDeDePortes.Dominio.Entities;
 using TiendaDeDeportes.Dominio.Entities;
+
 
 namespace TiendaDeDeportes.Models
 {

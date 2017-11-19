@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TiendaDeDePortes.Dominio.Abstract;
-using TiendaDeDePortes.Dominio.Entities;
+using TiendaDeDeportes.Dominio.Abstract;
+using TiendaDeDeportes.Dominio.Entities;
 
 namespace TiendaDeDeportes.Controllers
 {
@@ -66,5 +66,6 @@ namespace TiendaDeDeportes.Controllers
 
             return RedirectToAction("Index");
         }
+
     }
 }

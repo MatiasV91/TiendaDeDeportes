@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TiendaDeDeportes.Dominio.Entities.DetallesEnvio>
+
+@{
+    ViewBag.Title = "Ordenes";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ordenes</h2>
+
+<div class="panel">
+    <div class="panel-heading">Todas Las Ordenes Efectuadas</div>
+    <div class="panel-body">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th class="text-center">Orden Id</th>
+                    <th>Fecha de la Orden</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var pedido in Model)
+                {
+                    <tr>
+                        <td class="text-center">@Html.ActionLink(pedido.DetallesEnvioId.ToString(),"Detalles",new { pedido.DetallesEnvioId } )</td>
+                        <td>@pedido.FechaOrden</td>
+                        <td>@pedido.Nombre</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>  
+    </div>
+</div>
+

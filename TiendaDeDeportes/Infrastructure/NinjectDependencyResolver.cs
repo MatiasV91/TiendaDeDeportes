@@ -8,8 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using TiendaDeDeportes.Dominio.Abstract;
 using TiendaDeDeportes.Dominio.Concrete;
-using TiendaDeDePortes.Dominio.Abstract;
-using TiendaDeDePortes.Dominio.Concrete;
 
 namespace TiendaDeDeportes.Infrastructure
 {

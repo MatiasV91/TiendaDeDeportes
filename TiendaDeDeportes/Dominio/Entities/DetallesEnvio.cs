@@ -30,5 +30,6 @@ namespace TiendaDeDeportes.Dominio.Entities
 
         public bool EnvolverParaRegalo { get; set; }
 
+        public DateTime? FechaOrden { get; set; }
     }
 }

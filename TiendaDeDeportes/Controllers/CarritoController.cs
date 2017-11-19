@@ -6,8 +6,6 @@ using System.Web.Mvc;
 using TiendaDeDeportes.Dominio.Abstract;
 using TiendaDeDeportes.Dominio.Entities;
 using TiendaDeDeportes.Models;
-using TiendaDeDePortes.Dominio.Abstract;
-using TiendaDeDePortes.Dominio.Entities;
 
 namespace TiendaDeDeportes.Controllers
 {
@@ -58,7 +56,7 @@ namespace TiendaDeDeportes.Controllers
             return RedirectToAction("Index", new { volverAUrl });
         }
 
-        public ViewResult Checkout()
+        public ViewResult Checkout(Carrito carrito)
         {
             return View(new DetallesEnvio());
         }
@@ -73,6 +71,7 @@ namespace TiendaDeDeportes.Controllers
 
             if (ModelState.IsValid)
             {
+                detallesEnvio.FechaOrden = DateTime.Now;
                 procesarOrden.ProcesarOrden(carrito, detallesEnvio);
                 carrito.RemoverTodo();
                 return View("Completado");

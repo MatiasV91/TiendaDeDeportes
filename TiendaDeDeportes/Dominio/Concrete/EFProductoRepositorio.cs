@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiendaDeDeportes.Models;
-using TiendaDeDePortes.Dominio.Abstract;
-using TiendaDeDePortes.Dominio.Entities;
+using TiendaDeDeportes.Dominio.Abstract;
+using TiendaDeDeportes.Dominio.Entities;
 
-namespace TiendaDeDePortes.Dominio.Concrete
+namespace TiendaDeDeportes.Dominio.Concrete
 {
     public class EFProductoRepositorio : IProductoRepositorio
     {

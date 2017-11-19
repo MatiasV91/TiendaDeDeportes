@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TiendaDeDeportes.Models;
-using TiendaDeDePortes.Dominio.Abstract;
-using TiendaDeDePortes.Dominio.Entities;
+using TiendaDeDeportes.Dominio.Abstract;
+using TiendaDeDeportes.Dominio.Entities;
 
-namespace TiendaDeDePortes.Controllers
+namespace TiendaDeDeportes.Controllers
 {
     public class ProductoController : Controller
     {

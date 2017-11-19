@@ -1,0 +1,81 @@
+﻿@model TiendaDeDeportes.Models.OrdenesViewModel
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Detalles Compra:</h2>
+<div class="panel col-lg-6" style="float:none">
+    <table class="table table-bordered table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Cantidad</th>
+                <th>Item</th>
+                <th class="text-right">Precio</th>
+                <th class="text-right">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Compras)
+            {
+                <tr>
+                    <td class="text-center">@item.Cantidad</td>
+                    <td class="text-left">@item.Producto.Nombre</td>
+                    <td class="text-right">@item.Producto.Precio.ToString("c")</td>
+                    <td class="text-right">@((item.Cantidad * item.Producto.Precio).ToString("c"))</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4" class="text-right">Total:@Model.Total.ToString("c")</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<br />
+
+<h2>Detalles Envio:</h2>
+
+<div class="panel col-lg-3" style="float:none">
+    <table class="table table-bordered table-striped table-responsive">
+        <tbody>
+            <tr>
+                <th>Nombre:</th>
+                <td>@Model.DetallesEnvio.Nombre</td>
+            </tr>
+            <tr>
+                <th>Direccion:</th>
+                <td>@Model.DetallesEnvio.Direccion</td>
+            </tr>
+            <tr>
+                <th>Localidad:</th>
+                <td>@Model.DetallesEnvio.Localidad</td>
+            </tr>
+            <tr>
+                <th>Provincia:</th>
+                <td>@Model.DetallesEnvio.Provincia</td>
+            </tr>
+            <tr>
+                <th>Pais:</th>
+                <td>@Model.DetallesEnvio.Pais</td>
+            </tr>
+            <tr>
+                <th>Codigo Postal:</th>
+                <td>@Model.DetallesEnvio.CodigoPostal</td>
+            </tr>
+            <tr>
+                <th>¿Envolver para Regalo?:</th>
+                <td>@(Model.DetallesEnvio.EnvolverParaRegalo ? "Si" : "No")</td>
+            </tr>
+        </tbody>
+        <tfoot>
+           
+        </tfoot>
+    </table>
+</div>
+
+
+

@@ -15,7 +15,7 @@ namespace TiendaDeDeportes.Dominio.Concrete
 
         public IEnumerable<CompraItem> CompraItems(int detallesEnvioId)
         {
-            return _contexto.CompraItems.Include(c => c.DetallesEnvio).Include(c => c.Producto).Where(c => c.DetallesEnvioId == detallesEnvioId);
+            return _contexto.CompraItems.Include(c => c.Producto).Where(c => c.DetallesEnvioId == detallesEnvioId);
         }
 
         public void GuardarCompraItem(CompraItem compraItem)
