@@ -7,6 +7,10 @@ DEMO:
 
 http://bit.ly/TiendaDD
 
+Pagina de Admin:
+
+http://bit.ly/TiendaDDA
+
 Imagenes:
 
 ![alt text](https://user-images.githubusercontent.com/31046332/32689462-2113ea6c-c6c4-11e7-8c76-3cf5e6c3024f.png)
