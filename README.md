@@ -5,11 +5,11 @@ Productos, Categorias, Carrito, Registro de la Orden
 
 DEMO:
 
-http://bit.ly/TiendaDD
+http://bit.ly/Tiendadd
 
 Pagina de Admin:
 
-http://bit.ly/TiendaDDA
+http://bit.ly/TiendaddA
 
 Imagenes:
 
