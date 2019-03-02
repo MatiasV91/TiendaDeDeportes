@@ -3,9 +3,6 @@ Creando una Tienda E-commerce desde 0.Segun Libro Pro ASP.NET MVC 5 de Adam Free
 
 Productos, Categorias, Carrito, Registro de la Orden
 
-DEMO:
-
-http://bit.ly/2kpAwwj
 
 Pagina de Admin:
 
