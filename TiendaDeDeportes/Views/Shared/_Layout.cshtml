@@ -19,11 +19,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Tienda de Deportes", "Lista", "Producto", new { area = "" }, new { @class = "navbar-brand" })
+               
             </div>
-            <div class="navbar-collapse collapse"> 
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @Html.ActionLink("Admin", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Ordenenes", "Index", "Ordenes", new { area = "" }, new { @class = "navbar-brand" })
+                </ul>
                 @Html.Action("Sumario", "Carrito")
-                @*@Html.Partial("_LoginPartial")*@ 
-                <div class="visible-xs">@Html.Action("Menu", "Nav", new { menuMobile = true })</div>                
+                @*@Html.Partial("_LoginPartial")*@
+                <div class="visible-xs">@Html.Action("Menu", "Nav", new { menuMobile = true })</div>
             </div>
         </div>
 
