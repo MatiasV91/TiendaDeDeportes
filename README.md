@@ -1,6 +1,6 @@
 # TiendaDeDeportes
 Tienda E-commerce.Segun Libro Pro ASP.NET MVC 5 de Adam Freeman
-
+Utiza C# y ASP.NET MVC 5
 Productos, Categorias, Carrito, Registro de la Orden
 
 Imagenes:
